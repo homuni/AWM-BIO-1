@@ -1,0 +1,10 @@
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date" (dateChange)="onValueChange($event)">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker [startAt]="day"></mat-datepicker>
+</mat-form-field>
+
+<div *ngFor="let date of dates">
+  <mat-card>{{date.name}}</mat-card>
+</div>
+<p>finished</p>

@@ -1,0 +1,57 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav (click)="sidenav.toggle()" class="sidenav">
+      <mat-toolbar class="toolbar mat-elevation-z4" color="Primary">
+        <button mat-icon-button>
+          <mat-icon>menu</mat-icon>
+        </button>
+        <div class="titlelogo"><img src="assets/img/AWM_Logo_RGB_orange_small.png"></div>
+        <div class="titlebox">{{ title }}</div>
+      </mat-toolbar>
+      <mat-card *ngIf="isLoggedIn$ | async" class="login-card">
+        <mat-card-header>
+          <div mat-card-avatar><img src=""></div>
+          <mat-card-title>{{currentUser.user.firstName}} {{currentUser.user.lastName}}</mat-card-title>
+          <mat-card-subtitle *ngIf="currentUser.curriculum != null">
+            {{currentUser.curriculum.organiser.shortName}} - {{currentUser.curriculum.shortName}}
+          </mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+      <mat-nav-list role="navigation">
+        <a mat-list-item routerLink="/kontrolleur" role="listitem">Meine Tour
+          <mat-icon matListIcon>explore</mat-icon>
+        </a>
+        <mat-list-item routerLink="/wetter" role="listitem">Wetterinfo
+          <mat-icon mat-list-icon>cloud</mat-icon>
+        </mat-list-item>
+        <mat-list-item routerLink="Karte" role="listitem">MVV-Karte
+          <mat-icon mat-list-icon>tram</mat-icon>
+        </mat-list-item>
+        <mat-list-item routerLink="AWM-Portal" role="listitem">AWM-Portal
+          <mat-icon mat-list-icon>supervised_user_circle</mat-icon>
+        </mat-list-item>
+        <mat-list-item routerLink="/antrag" role="listitem">Anträge
+          <mat-icon mat-list-icon>messages</mat-icon>
+        </mat-list-item>
+        <mat-list-item routerLink="information" role="listitem">Notfall
+          <mat-icon mat-list-icon>warning</mat-icon>
+        </mat-list-item>
+        <mat-list-item  *ngIf="isLoggedIn$ | async" (click)="logout()" role="listitem">Abmelden
+            <mat-icon mat-list-icon>logout</mat-icon>
+          </mat-list-item>
+          <section class="orange line"></section>
+    </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">
+      <mat-toolbar class="toolbar mat-elevation-z4" color="Primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <div class="titlelogo"><img src="assets/img/AWM_Logo_RGB_orange_small.png"></div>
+        <div class="titlebox">{{ title }}</div>
+      </mat-toolbar>
+      <main class="content">
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+

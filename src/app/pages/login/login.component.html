@@ -1,0 +1,31 @@
+<mat-card class="signin-card">
+  <div class="welcome-logo" align="center"><img src="assets/img/AWM_Logo_RGB_orange_medium.png"></div>
+  <div class="welcome-text" align="center">
+      <h1>Guten Tag</h1>
+  </div>
+</mat-card>
+
+<mat-card>
+<div class="login-container">
+  <div class="text-one" align="center">Anmeldung</div>
+  <div class="text-two" align="center">Mit Personalkennung anmelden.</div>
+  <br>
+  <br>
+  <mat-form-field>
+    <input matInput placeholder="Benutzername" [(ngModel)]="login.email">
+  </mat-form-field>
+  <div></div>
+  <mat-form-field>
+    <input matInput placeholder="Passwort" [type]="hide ? 'password' : 'text'" [(ngModel)]="login.password">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  <div></div>
+  <mat-card-actions align="end">
+    <button mat-raised-button (click)="onSubmit()">
+      Login!
+    </button>
+  </mat-card-actions>
+</div>
+</mat-card>

@@ -1,0 +1,54 @@
+#UbersichtTourMerkmal {
+    font-size: 20px;
+    font-variant: bold;
+    color: #232850;
+    color:#232850;
+    float: left;
+    text-align: right;
+    margin-right: 2%;
+    line-height: 150%;
+}
+
+#UbersichtTourAttribut {
+    font-size: 20px;
+    color: #232850;
+    color:#232850;
+    text-align: left;
+    line-height: 150%;
+}
+
+
+#locpin1 {
+    z-index: 30;
+    position: relative;
+    left:100px;
+    font-size: 60px;
+}
+#locpin2 {
+    z-index: 30;
+    position: relative;
+    left:140px;
+    font-size: 60px;
+}
+#locpin3 {
+    z-index: 30;
+    position: relative;
+    left:180px;
+    font-size: 60px;
+}
+
+#map {
+    z-index: 10;
+    position: absolute;
+    left:10px
+    
+}
+
+#standortBew {
+    margin-top: 80%;
+    
+}
+
+#tourEnde {
+    margin-top: 80px;
+}

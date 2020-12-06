@@ -1,0 +1,35 @@
+<body>
+<h1 style="font-variant: bold;text-align:center;margin: 20px 0 10px 0;">Meine Tour</h1>
+  
+<mat-grid-list cols="2" rowHeight="1:1">
+    <mat-grid-tile>      
+  <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d713.3654011430913!2d11.57770911311155!3d48.159183635533076!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1575558825471!5m2!1sde!2sde"
+      width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen="">
+  </iframe>
+  <button mat-icon-button id="locpin1" (click)="Funktionauswahl1()">
+  <mat-icon id="iconpin1">place</mat-icon>
+  </button>>
+  <button mat-icon-button id="locpin2" (click)="Funktionauswahl2()">
+    <mat-icon id="iconpin2">place</mat-icon>
+  </button>>
+  <button mat-icon-button id="locpin3" (click)="Funktionauswahl3()">
+    <mat-icon id="iconpin3">place</mat-icon>
+  </button>>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <p id="UbersichtTourMerkmal">Gebiet:<br>Zeitraum:<br>Tonnen:<br>Schlüsselhäuser:<br>Partie in der Nähe:<br></p>
+        <p id="UbersichtTourAttribut">001<br>01.02.20-29.03.20<br>600<br>50<br>15-135 , 10-008<br></p>
+        <button mat-stroked-button id="standortBew" color="primary" routerLink="/partie" >Standort bewerten</button>
+    </mat-grid-tile> 
+</mat-grid-list>
+
+<footer>
+
+    <button mat-stroked-button id="tourEnde" color="warn" routerLink="/landing" >Tour beenden</button>
+  
+</footer>
+
+<mat-icon place></mat-icon>
+
+<!--<button mat-stroked-button routerLink="/partie" color="primary" style="color: rgb(1, 0, 7);float:right;width: 30px;height: 30px;background-color: rgb(247, 184, 220);">OK</button>--> 
+</body>

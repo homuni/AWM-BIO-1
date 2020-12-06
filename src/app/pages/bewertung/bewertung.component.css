@@ -1,0 +1,67 @@
+html, body { 
+  height: 100%;
+  margin: 1%; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  font-size: 25px;
+}
+
+h1 { 
+  font-size: 35px;
+  text-align: center;
+  margin: 1%;
+  padding: 0%;
+}
+
+h3{
+  text-align: center;
+  letter-spacing: 0,5px;
+  flex-direction: column;
+  font-size: 35px;
+
+}
+
+.bar {
+   display: flex;
+   margin: 1%,5%,1%,1%;
+   }
+
+.foto{
+  font-size: 40px;
+}
+
+ #buttongreen{
+  margin-right: 2%;
+  background-color: rgb(2, 179, 2);
+}
+
+#buttonyellow{
+  margin-right: 2%;
+  background-color: yellow;
+}
+
+#buttonred{
+  margin-right: 2%;
+  background-color:red;
+}
+
+.list{
+  float: left;
+  width: 46%;
+  height: 350px;
+  margin-right: 1%;
+  font-size: 35px ;
+}
+
+.rightside{
+  width: 46%;
+  height: 350px;
+  overflow: hidden;
+}
+.tonne{
+  margin-left: 25%;
+  font-size: 250px;
+  color: black;
+  text-align: center;
+  }
+ 
+

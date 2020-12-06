@@ -1,0 +1,75 @@
+
+<!-- Kopf -->
+<h1>Bewertung {{tonnenId}}</h1>
+<!-- Mitte 1 -->
+<mat-card class="bar">
+
+    <button mat-fab id="buttongreen" (click)="Funktiongreen()" matTooltip="Bewertung gut"></button>
+    <button mat-fab id="buttonyellow" (click)=Funktionyellow() matTooltip="Bewertung mittel"></button>
+    <button mat-fab id="buttonred" (click)=Funktionred() value="Foto hinzufüguen!" matTooltip="Bewertung schlecht"></button>
+
+        <button mat-raised-button class="foto">
+        <mat-icon>add_a_photo</mat-icon>
+        Foto
+        </button>
+
+<!--         ehemals Inhalt von mat-raised-button darüber -->
+<!--         matTooltip="Foto hinzufüguen" #foto
+        aria-label="Button that displays a tooltip when focused or hovered over"
+        id="foto" (click)=Funktionfoto(foto.value) value="Foto wurde hinzugefügt!" -->
+
+</mat-card>
+
+<!-- Mitte2 -->
+  
+<mat-divider style="margin-top: 1%; margin-bottom: 1%;"></mat-divider>
+
+<mat-card class="list">
+        <mat-checkbox color="warn">Fehlt</mat-checkbox><br>
+        <mat-checkbox color="warn">Verschlossen</mat-checkbox><br>
+
+<!-- Code angepasst Gruber -->
+<mat-form-field>
+  <mat-label>Defekt</mat-label>
+  <mat-select [(value)]="selected">
+    <mat-option>Keine</mat-option>
+    <mat-option value="option1">Deckel</mat-option>
+    <mat-option value="option2">Reifen</mat-option>
+    <mat-option value="option3">Henkel</mat-option>
+  </mat-select>
+</mat-form-field><br>
+
+
+<!-- Original Code Eichhorn-->
+<!--     <mat-form-field style="width: 300px;">
+            <mat-label>Defekt wählen</mat-label>
+            <mat-select [(value)]="selected" style="font-size: 20px;">
+              <mat-option value="Deckel">Deckel</mat-option>
+              <mat-option value="Henkel">Henkel</mat-option>
+              <mat-option value="Räder">Räder</mat-option>
+              <mat-option value="Räder">anderer Defekt</mat-option>
+              <mat-option>kein Defekt</mat-option>
+            </mat-select>
+          </mat-form-field> -->
+
+
+
+    <mat-form-field style="width: 300px;">
+        <input matInput value="" placeholder="Notiz" #message color="warn" style="margin-top: 0%;">
+    </mat-form-field>
+</mat-card>
+
+<mat-card class="rightside">
+    <mat-icon class="tonne">delete</mat-icon>
+     <h3>120l</h3>
+</mat-card>
+
+    <br clear="left">
+
+    <!-- Footer -->
+<footer>
+
+      <button mat-stroked-button color="warn" (click)="onSubmit()">OK</button>
+
+  </footer>
+  

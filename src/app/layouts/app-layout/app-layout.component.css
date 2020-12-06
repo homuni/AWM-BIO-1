@@ -1,0 +1,55 @@
+.sidenav-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.sidenav-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.toolbar {
+  position: relative;
+  z-index: 1;
+  flex-grow: 0;
+  flex-shrink: 0;
+  border-bottom: 4px solid #df7f25;
+}
+
+.content {
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: auto;
+  padding: 24px;
+}
+
+.sidenav {
+  width: 65%;
+  min-width: 250px;
+  max-width: 350px;
+}
+
+::ng-deep router-outlet + * {
+  display: block;
+  width: 100%;
+  /* max-width: 500px; */
+  margin: 0 auto;
+}
+
+.login-card {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  margin-right: 3%;
+  margin-left: 3%;
+}
+
+.titlebox {
+  margin-left: 11px;
+}
+
+.titlelogo {
+  margin-top: 8px;
+  margin-left: 10px;
+}

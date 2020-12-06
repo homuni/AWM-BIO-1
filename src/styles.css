@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Helvetica Neue", sans-serif; color: #232850;}
+
+footer {
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+    max-width: 100%;
+    flex-direction: column;
+    clear: left;
+}

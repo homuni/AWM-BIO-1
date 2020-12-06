@@ -1,0 +1,62 @@
+
+
+<mat-card>
+    Mitarbeiter: Max Mustermann
+    </mat-card>
+    
+    <h2>Anträge</h2>
+    
+    <mat-card>
+        <h1>Urlaubsantrag</h1>
+        <mat-form-field style="width: 200px; margin: 3% 3%,3%,0%;">
+            <input matInput value="" placeholder="Start" #message color="warn" style="margin-top: 0%;">
+        </mat-form-field>
+        <mat-form-field style="width: 200px; margin: 3%;">
+            <input matInput value="" placeholder="Ende" #message color="warn" style="margin-top: 0%;">
+        </mat-form-field>
+            <mat-form-field style= "margin: 3%;">
+                <mat-select placeholder="Art">
+                  <mat-option value="option">Gleitzeit</mat-option>
+                  <mat-option value="option">Urlaubstage</mat-option>
+                </mat-select>
+              </mat-form-field>
+      
+              <br>
+      
+              <button mat-flat-button color="warn">Abschicken</button>
+      </mat-card>
+
+      <mat-divider style="margin-top: 1%; margin-bottom: 1%;"></mat-divider>
+<mat-card>
+  <h1>Kurzkrank</h1>
+  
+  <mat-form-field style="width: 200px; margin: 3% 3%,3%,0%;">
+    <input matInput value="" placeholder="Start" #message color="warn" style="margin-top: 0%;">
+</mat-form-field>
+<mat-form-field style="width: 200px; margin: 3%;">
+    <input matInput value="" placeholder="Ende" #message color="warn" style="margin-top: 0%;">
+</mat-form-field>
+  <br>
+      <button mat-flat-button color="warn">Abschicken</button>
+
+</mat-card>
+
+<mat-divider style="margin-top: 1%; margin-bottom: 1%;"></mat-divider>
+
+<mat-card>
+    <h1>Unterlagen</h1>
+
+    <mat-form-field style="width: 300px;">
+        <mat-label>Wählen</mat-label>
+        <mat-select [(value)]="selected">
+          <mat-option>Keine</mat-option>
+          <mat-option value="option1">Zeitkorrektur</mat-option>
+          <mat-option value="option2">Arbeitsunfähigkeitsbescheinigung</mat-option>
+          <mat-option value="option3">Schadensbericht</mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+    <br>
+        <button mat-flat-button color="warn">Abschicken</button>
+    
+    </mat-card>

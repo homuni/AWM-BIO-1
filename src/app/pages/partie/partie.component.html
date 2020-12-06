@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Aktuelle Tour</title>
+</head>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+  <title>Akuelle Tour</title>
+  <h1>Aktuelle Tour</h1>
+  <h2>{{tour.name}}</h2>
+  <div id="StandortUeberschrift">Standort</div>
+  <h3>
+    <div id="InfoKastenKategorien">Aktuelle Adresse:  <br> Standplatznr.:  <br> Letzte Leerung:
+    </div>
+    <div id="InfoKastenWerte">{{tour.location.address}}<br>{{tour.location.number}}<br>{{tour.location.lastPick}}
+    </div>
+  </h3>
+  <h4>Hinweise<br>{{tour.location.remarks}}</h4>
+
+
+  <section class="spacevert"></section>
+  <section class="spaceCard">
+
+    <!-- neuer Code mit Datenbindung-->
+    <!-- die Liste aller Tonnen, pro Tonne eine Karte -->
+    <mat-card *ngFor="let ton of tour.tons" class="tonnencard">
+      <mat-card-header>
+        <mat-card-title class="tctitle">{{ton.type}}</mat-card-title>
+        <mat-card-subtitle class="tcsubtitle">ID: {{ton.id}} <br>Aufdruck: {{ton.label}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <section class="volumenTonne">
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                vorherige Kontrollen
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <section class="kontrollenhistorie">
+              <!-- Die Liste aller Kontrollen einer Tonne -->
+              <div *ngFor="let pick of ton.picks">
+                <div>{{pick.date}}</div>
+                <section class="status">{{pick.state}}</section> <br>
+              </div>
+            </section>
+          </mat-expansion-panel>
+        </section>
+      </mat-card-content>
+      <mat-card-actions class="tcaction">
+        <button mat-raised-button color="accent" [routerLink]="['/bewertung', ton.id]">Bewerten</button>
+        <section class="spacevert2"></section>
+        <mat-checkbox class="tccheckbox" disabled="disabled" [checked]="ton.checked">Erledigt</mat-checkbox>
+      </mat-card-actions>
+    </mat-card>
+
+  </section>
+
+  <!--
+
+  <p>Fortschritt <br>4 von 10 Tonnen bearbeitet</p>
+
+  <section class ="progbar">
+    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+  </section>
+
+-->
+
+  <footer>
+
+    <button id="finishedBtn" mat-stroked-button [disabled]="!tourCompleted" color="Primary"
+      routerLink="/kontrolleur">Standort
+      abschließen</button>
+
+  </footer>
+
+</div>
